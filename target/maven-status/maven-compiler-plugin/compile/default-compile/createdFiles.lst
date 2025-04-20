@@ -1,0 +1,4 @@
+com/mycompany/app/controller/UserController.class
+com/mycompany/app/service/UserService.class
+com/mycompany/app/model/User.class
+com/mycompany/app/App.class
