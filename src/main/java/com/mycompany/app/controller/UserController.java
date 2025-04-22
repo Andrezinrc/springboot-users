@@ -2,6 +2,7 @@ package com.mycompany.app.controller;
 
 import com.mycompany.app.model.User;
 import com.mycompany.app.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +11,8 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    private final UserService userService = new UserService();
+    @Autowired
+    private UserService userService;
 
     //Criar novo user
     @PostMapping

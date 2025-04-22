@@ -1,1 +1,5 @@
+/home/user/crud/src/main/java/com/mycompany/app/model/User.java
+/home/user/crud/src/main/java/com/mycompany/app/controller/UserController.java
 /home/user/crud/src/main/java/com/mycompany/app/App.java
+/home/user/crud/src/main/java/com/mycompany/app/service/UserService.java
+/home/user/crud/src/main/java/com/mycompany/app/repository/UserRepository.java
