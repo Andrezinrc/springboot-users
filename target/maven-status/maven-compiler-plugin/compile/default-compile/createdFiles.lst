@@ -1,5 +1,7 @@
 com/mycompany/app/controller/UserController.class
+com/mycompany/app/config/SecurityConfig.class
 com/mycompany/app/service/UserService.class
+com/mycompany/app/App.class
+com/mycompany/app/security/JwtUtil.class
 com/mycompany/app/model/User.class
 com/mycompany/app/repository/UserRepository.class
-com/mycompany/app/App.class

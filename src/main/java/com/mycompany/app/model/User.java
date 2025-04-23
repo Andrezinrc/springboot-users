@@ -1,5 +1,7 @@
 package com.mycompany.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import javax.persistence.*;
 
 @Entity
@@ -11,10 +13,14 @@ public class User {
     private String name;
     private String email;
 
-    public User(int id, String name, String email){
+    @JsonIgnore
+    private String password;
+
+    public User(int id, String name, String email, String password){
         this.id = id;
         this.name = name;
         this.email = email;
+        this.password = password;
     }
 
     public User() {}
@@ -38,9 +44,23 @@ public class User {
         this.email = email;
     }
 
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+
+    //Metodo para encriptar a senha
+    public void encryptPassword(String rawPassword) {
+       BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+       this.password = encoder.encode(rawPassword);
+    }
+
     //para debug mais facil
     @Override
     public String toString(){
-        return "User{id= " + id + ", nome='" + name + "', email='" + email + "'}";
+        return "User{id= " + id + ", nome='" + name + "', email='" + email + "', password='" + password + "'}";
     }
 }
